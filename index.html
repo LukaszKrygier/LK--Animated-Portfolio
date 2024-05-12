@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Doe Portfolio</title>
-    <!-- <link rel="stylesheet" href="./css/animation-classes.css" /> -->
     <link rel="icon" type="image/x-icon" href="./assets/icons/lkfavicon.ico" />
     <link rel="preload">
     <script src="./js/animation.js" defer></script>
@@ -17,17 +16,17 @@
   </head>
   <body>
     <div id="hero">
-      <h5>Hello I'm</h5>
-      <h1>John Doe</h1>
-      <p>Fullstack Developer</p>
+      <h5>Hi, ich bin</h5>
+      <h1>Lukasz Krygier</h1>
+      <p>Angehender Anwendungsentwickler</p>
       <!-- Block, Element, Modifier (BEM) naming convention-->
-      <div id="hero__animation">
+      <div id="hero__animation" class="face-animation animate-top-left">
         <div id="hero__animation__img"></div>
       </div>
     </div>
     <nav id="grid">
       <div id="grid__tl">
-        <div id="grid__tl__btn">About</div>
+        <div id="grid__tl__btn">Über mich</div>
         <div id="grid__tl__content">
           <div class="cards">
             <div class="cards__content">
@@ -37,7 +36,7 @@
                   alt="Experience icon"
                   class="icon"
                 />
-                <h2>Experience</h2>
+                <h2>Erfahrung</h2>
                 <p>
                   6 Months + <br />
                   Developer <br />
@@ -68,7 +67,7 @@
         </div>
       </div>
       <div id="grid__tr">
-        <div id="grid__tr__btn">Experience</div>
+        <div id="grid__tr__btn">Erfahrung</div>
         <div id="grid__tr__content">
           <div class="cards experience">
             <article class="experience__skill">
@@ -169,7 +168,7 @@
         </div>
       </div>
       <div id="grid__bl">
-        <div id="grid__bl__btn">Projects</div>
+        <div id="grid__bl__btn">Projekte</div>
         <div id="grid__bl__content">
           <div id="grid__bl__content__projects">
             <div class="project p-1">
@@ -240,16 +239,15 @@
         </div>
       </div>
       <div id="grid__br">
-        <div id="grid__br__btn">Contact</div>
+        <div id="grid__br__btn">Kontakt</div>
         <div id="grid__br__content">
-          <h5 class="contact-text">Get In Touch</h5>
-          <h2 class="contact-text">Contact Me</h2>
+          <h2 class="contact-text">Kontakt aufnehmen</h2>
           <div>
             <button
               class="btn btn-contact"
               onclick="window.location.href='mailto:name@gmail.com'"
             >
-              Email
+              E-Mail
             </button>
             <button
               class="btn btn-contact"
@@ -262,7 +260,26 @@
       </div>
     </nav>
     <div id="color-mode">
-      <div id="toggle-button" class="icon-mode"></div>
+      <div id="toggle-button" class="icon"></div>
     </div>
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Check if jQuery is loaded
+      if (typeof jQuery == 'undefined') {
+        console.error('jQuery is not loaded.');
+      } else {
+        // jQuery is loaded, execute the script
+        $(window).on("load", function() {
+          console.log('Window loaded.');
+          // Fade out the loader wrapper
+          $(".loader-wrapper").fadeOut(1000, function() {
+            console.log('Loader faded out.');
+          });
+        });
+      }
+    </script>
   </body>
 </html>

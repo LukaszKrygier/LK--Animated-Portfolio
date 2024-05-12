@@ -186,33 +186,32 @@ function handleWindowResize() {
   }
 }
 
-//// Store last reverse animation, ready to be played
+// Store last reverse animation, ready to be played
 let lastReverseAnimation = "";
 
- // Play animation function
- function playAnimation(animation, reverseAnimation) {
-   // Remove all the animation classes from heroImage
-   heroImage.className = "";
-   if (lastReverseAnimation !== "") {
-     heroImage.classList.add(lastReverseAnimation);
-     setTimeout(function () {
-       heroImage.classList.remove(lastReverseAnimation);
-       heroImage.classList.add(animation);
-       lastReverseAnimation = reverseAnimation;
-     }, 200);
-   } else {
-     heroImage.classList.add(animation);
-     lastReverseAnimation = reverseAnimation;
-   }
- }
+// Play animation function
+function playAnimation(animation, reverseAnimation) {
+  // Remove all the animation classes from heroImage
+  heroImage.className = "";
 
-
+  if (lastReverseAnimation !== "") {
+    heroImage.classList.add(lastReverseAnimation);
+    setTimeout(function () {
+      heroImage.classList.remove(lastReverseAnimation);
+      heroImage.classList.add(animation);
+      lastReverseAnimation = reverseAnimation;
+    }, 200);
+  } else {
+    heroImage.classList.add(animation);
+    lastReverseAnimation = reverseAnimation;
+  }
+}
 
 function playClosingAnimation(reverseAnimation) {
-  tlBtn.innerHTML = "About";
-  trBtn.innerHTML = "Experience";
-  blBtn.innerHTML = "Projects";
-  brBtn.innerHTML = "Contact";
+  tlBtn.innerHTML = "Über mich";
+  trBtn.innerHTML = "Erfahrung";
+  blBtn.innerHTML = "Projekte";
+  brBtn.innerHTML = "Kontakt";
 
   switch (activeCorner) {
     case "top-left":
@@ -253,13 +252,13 @@ tlBtn.onclick = function () {
   if (activeCorner === "top-left") {
     playClosingAnimation("reverse-animate-top-left");
   } else {
-    trBtn.innerHTML = "Experience";
-    blBtn.innerHTML = "Projects";
-    brBtn.innerHTML = "Contact";
+    trBtn.innerHTML = "Erfahrung";
+    blBtn.innerHTML = "Projekte";
+    brBtn.innerHTML = "Kontakt";
 
     // Setting activeCorner
     activeCorner = "top-left";
-    tlBtn.innerHTML = "&uarr;<br/>About";
+    tlBtn.innerHTML = "&uarr;<br/>Über mich";
 
     handleWindowResize();
     playAnimation("animate-top-left", "reverse-animate-top-left");
@@ -288,13 +287,13 @@ trBtn.onclick = function () {
   if (activeCorner === "top-right") {
     playClosingAnimation("reverse-animate-top-right");
   } else {
-    tlBtn.innerHTML = "About";
-    blBtn.innerHTML = "Projects";
-    brBtn.innerHTML = "Contact";
+    tlBtn.innerHTML = "Über mich";
+    blBtn.innerHTML = "Projekte";
+    brBtn.innerHTML = "Kontakt";
 
     // Setting activeCorner
     activeCorner = "top-right";
-    trBtn.innerHTML = "&uarr;<br/>Experience";
+    trBtn.innerHTML = "&uarr;<br/>Erfahrung";
 
     handleWindowResize();
     playAnimation("animate-top-right", "reverse-animate-top-right");
@@ -324,12 +323,12 @@ blBtn.onclick = function () {
     playClosingAnimation("reverse-animate-bottom-left");
   } else {
     tlBtn.innerHTML = "About";
-    trBtn.innerHTML = "Experience";
-    brBtn.innerHTML = "Contact";
+    trBtn.innerHTML = "Erfahrung";
+    brBtn.innerHTML = "Kontakt";
 
     // Setting activeCorner
     activeCorner = "bottom-left";
-    blBtn.innerHTML = "Projects<br/>&darr;";
+    blBtn.innerHTML = "Projekte<br/>&darr;";
 
     handleWindowResize();
     playAnimation("animate-bottom-left", "reverse-animate-bottom-left");
@@ -359,12 +358,12 @@ brBtn.onclick = function () {
     playClosingAnimation("reverse-animate-bottom-right");
   } else {
     tlBtn.innerHTML = "About";
-    trBtn.innerHTML = "Experience";
-    blBtn.innerHTML = "Projects";
+    trBtn.innerHTML = "Erfahrung";
+    blBtn.innerHTML = "Projekte";
 
     // Setting activeCorner
     activeCorner = "bottom-right";
-    brBtn.innerHTML = "Contact<br/>&darr;";
+    brBtn.innerHTML = "Kontakt<br/>&darr;";
 
     handleWindowResize();
     playAnimation("animate-bottom-right", "reverse-animate-bottom-right");
