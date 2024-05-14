@@ -12,7 +12,7 @@ body:after {
     /* Colors */
     --bg: #fff;
     --bg-alt: #333;
-    --bg-alt-2: #f0f0f0;
+    --bg-alt-2: #f8f8f8;
     --bg-transparent: #ffffffe8;
     --border: 0.01rem solid #333;
     --text: #333;
@@ -69,11 +69,14 @@ body:after {
   #toggle-button {
     background-image: var(--sun);
     background-size: cover;
+    rotate: 180deg;
     cursor: pointer;
   }
   
   .dark-mode #toggle-button {
     background-image: var(--moon);
+    rotate: 180deg
+    ;
   }
   
   .dark-mode #color-mode {

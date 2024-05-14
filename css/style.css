@@ -85,7 +85,6 @@ p {
   font-weight: 800;
   font-size: 1.5rem;
   z-index: 100;
-  border-radius: 40%;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -342,6 +341,11 @@ button {
 .btn-contact {
   border: var(--border);
   border-radius: 2rem;
+}
+
+#btn-linkedin {
+  background: #0a66c2;
+  color: #fff;
 }
 
 .loader-wrapper {
